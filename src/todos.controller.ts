@@ -1,8 +1,9 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, UseGuards } from '@nestjs/common';
 import { of } from 'rxjs';
+import { IsAuthenticatedGuard } from './is-authenticated.guard';
 
 @Controller('todos')
+@UseGuards(new IsAuthenticatedGuard())
 export class TodosController {
   @Get()
   getTodos() {
