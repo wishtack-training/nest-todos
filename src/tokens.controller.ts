@@ -1,10 +1,6 @@
 import { Body, Controller, Post, UnauthorizedException } from '@nestjs/common';
 import { of } from 'rxjs';
-
-export interface UserCredentials {
-  email: string;
-  password: string;
-}
+import { UserCredentials } from './user-credentials';
 
 @Controller('tokens')
 export class TokensController {
